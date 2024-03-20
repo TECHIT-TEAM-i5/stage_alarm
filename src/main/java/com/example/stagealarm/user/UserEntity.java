@@ -22,15 +22,11 @@ public class UserEntity extends BaseEntity {
   @Setter
   private String password;
   @Column(nullable = false)
-  @Setter
   private String email; //email로 가입여부 식별
-  @Setter
+
   private String gender;
-  @Setter
   private String phone;
-  @Setter
   private String profileImg;
-  @Setter
   private String address;
   @Setter
   private String authorities;
