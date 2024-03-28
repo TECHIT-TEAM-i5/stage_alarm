@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}"
+      layout:fragment="content">
+<head>
+  <title>Test</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <main>
+    <div>
+      <div>
+        <div>
+          <span> 게시판</span>
+          <div>
+            <button>작성일 순</button>
+            <button>조회 순</button>
+          </div>
+        </div>
+        <table>
+          <thead>
+          <tr>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <!-- 게시글 목록 -->
+            <tr id="boardList">
+            <!-- Ajax로 받아온 게시글 목록을 동적으로 추가할 공간  -->
+            </tr>
+          </tbody>
+        </table>
+        <button>글쓰기</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script th:inline="javascript">
+    $(document).ready(function () {
+      // 사이드바 메뉴 아이템 클릭 이벤트 리스너
+      $('.nav-link.sub-menu').click(function (e) {
+          e.preventDefault() // 기본 이벤트 동작을 중단
+          const categoryId = $(this).attr(`href`).split('/').pop(); // pop(): 마지막 부분을 추출
+          console.log(categoryId);
+      })
+    });
+  </script>
+
+</body>
+</html>
