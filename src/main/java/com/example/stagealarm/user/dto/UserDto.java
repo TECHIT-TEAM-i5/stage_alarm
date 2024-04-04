@@ -22,6 +22,7 @@ public class UserDto {
     private String phone;
     private String profileImg;
     private String address;
+    private String authorities;
 
     public static UserDto fromEntity(UserEntity userEntity){
         return UserDto.builder()
