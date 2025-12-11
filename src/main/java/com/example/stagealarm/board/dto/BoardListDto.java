@@ -35,7 +35,7 @@ public class BoardListDto {
     return new BoardListDto(
       entity.getId(),
       entity.getTitle(),
-      entity.getUserEntity().getLoginId(),
+      entity.getUserEntity().getNickname(),
       formattedDate,
       entity.getViews()
     );
